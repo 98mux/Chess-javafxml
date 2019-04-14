@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<HBox prefHeight="515.0" prefWidth="700.0" spacing="15" style="-fx-padding: 10px 10px 10px 10px" xmlns="http://javafx.com/javafx/9" xmlns:fx="http://javafx.com/fxml/1" fx:controller="graphics.GameController">
+   <children>
+      <SplitPane orientation="VERTICAL" prefHeight="487.0" prefWidth="519.0">
+         <items>
+            <AnchorPane fx:id="board" prefHeight="573.0" prefWidth="484.0">
+               <children>
+                   <ImageView fx:id="chessBoard" fitHeight="480.0" fitWidth="488.0" mouseTransparent="true" pickOnBounds="false" preserveRatio="true">
+                     <image>
+                        <Image fx:id="test" url="@ChessBoard.png" />
+                     </image>
+                  </ImageView>
+                  <Pane fx:id="buttons" layoutY="480.0" prefHeight="113.0" prefWidth="480.0">
+                     <children>
+                        <Button layoutX="14.0" layoutY="23.0" mnemonicParsing="false" onAction="#undo" text="Undo">
+                           <font>
+                              <Font size="17.0" />
+                           </font></Button>
+                        <Button layoutX="97.0" layoutY="23.0" mnemonicParsing="false" onAction="#redo" text="Redo">
+                           <font>
+                              <Font size="17.0" />
+                           </font></Button>
+                        <Button layoutX="16.0" layoutY="71.0" mnemonicParsing="false" onAction="#save" text="Save">
+                           <font>
+                              <Font size="17.0" />
+                           </font></Button>
+                        <Button layoutX="98.0" layoutY="71.0" mnemonicParsing="false" onAction="#load" text="Load">
+                           <font>
+                              <Font size="17.0" />
+                           </font></Button>
+                        <TextField fx:id="filename" layoutX="179.0" layoutY="74.0" prefHeight="27.0" prefWidth="294.0" />
+                     </children>
+                  </Pane>
+               </children>
+            </AnchorPane>
+         </items>
+      </SplitPane>
+      <SplitPane orientation="VERTICAL" prefHeight="495.0" prefWidth="231.0">
+         <items>
+            <TextArea fx:id="actionsInGame" prefHeight="493.0" prefWidth="219.0" text="GAME:" wrapText="true">
+               <font>
+                  <Font name="System Bold" size="20.0" />
+               </font>
+            </TextArea>
+         </items>
+      </SplitPane>
+   </children>
+</HBox>
